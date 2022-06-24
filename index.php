@@ -4,6 +4,23 @@ include 'base.php';
 
 <title>Home page</title>
 
+<style>
+    .container #add_link {
+        position: relative;
+        float: right;
+    }
+
+    .table-responsive {
+        text-align: center;
+    }
+
+    .initials {
+        background-color: lightblue;
+        border-radius: 50%;
+        padding: 5px;
+    }
+</style>
+
 <?php
 
 $query = "SELECT * FROM contacts ORDER BY fname";
@@ -11,6 +28,7 @@ $query = "SELECT * FROM contacts ORDER BY fname";
 ?>
 
 <div class="container">
+    <a href="add.php" class="btn btn-primary mb-3" id="add_link">+ Add new contact</a>
     <div class="text-center mb-3">
         <input type="text" name="search" id="search" class="form-control" placeholder="Start typing here to search">
     </div>
@@ -18,10 +36,11 @@ $query = "SELECT * FROM contacts ORDER BY fname";
         <table class="table table-bordered table-hover" id="contacts-table">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
+                    <th scope="col">Initials</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Mobile Number</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
                 </tr>
             </thead>
 
@@ -37,10 +56,11 @@ $query = "SELECT * FROM contacts ORDER BY fname";
 
                     <tbody>
                         <tr class="rows">
-                            <td><?php echo $uid; ?></td>
-                            <td><?php echo $ufname; ?></td>
-                            <td><?php echo $ulname; ?></td>
+                            <td><span class="initials"><?php echo $ufname[0] . $ulname[0]; ?></span></td>
+                            <td><?php echo $ufname . " " . $ulname; ?></td>
                             <td>+91 <?php echo $mob; ?></td>
+                            <td><a href="edit.php?edit=<?php echo $uid; ?>" class="btn btn-sm btn-warning">Edit <i class="fa-solid fa-pencil"></i></a></td>
+                            <td><a href="index.php?delete=<?php echo $uid; ?>" class="btn btn-sm btn-danger">Delete <i class="fa-solid fa-trash"></i></a></td>
                         </tr>
                     </tbody>
             <?php
@@ -51,6 +71,15 @@ $query = "SELECT * FROM contacts ORDER BY fname";
         </table>
     </div>
 </div>
+
+<?php
+if (isset($_GET['delete'])) {
+    $del_id = $_GET['delete'];
+    $query1 = "DELETE FROM contacts WHERE id = '$del_id'";
+    $result = mysqli_query($conn, $query1);
+    header("Location: index.php");
+}
+?>
 
 <script>
     $(document).ready(function() {
