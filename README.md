@@ -1,8 +1,10 @@
 # Contacts-App
 ### Home page
 <img width="1440" alt="Screenshot 2022-06-24 at 10 57 07 PM" src="https://user-images.githubusercontent.com/67577972/175611994-75f0d607-5e95-4a3f-959d-d370c79dc3a4.png"><br>
+--------------
 ### Add contact page
 <img width="1440" alt="Screenshot 2022-06-24 at 10 58 28 PM" src="https://user-images.githubusercontent.com/67577972/175612174-3c44286a-4064-4b0e-a251-77d85d405802.png"><br>
+--------------
 ### Edit contact page
 <img width="1440" alt="Screenshot 2022-06-24 at 10 59 58 PM" src="https://user-images.githubusercontent.com/67577972/175612420-9d6b1cd0-3afc-42ff-8194-25793f75a5af.png"><br>
 --------------
