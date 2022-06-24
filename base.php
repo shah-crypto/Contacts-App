@@ -14,11 +14,21 @@ $conn = mysqli_connect('localhost', 'root', '', 'swiftsku');
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/728f7cc665.js" crossorigin="anonymous"></script>
+    <style>
+        #header {
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container my-5">
-        <h1>Phone Book App</h1>
+    <div class="container mt-5 mb-3" id="header">
+        <h1><i class="fa-solid fa-address-book"></i> Phone Book App</h1>
     </div>
 </body>
 
